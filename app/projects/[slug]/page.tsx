@@ -138,7 +138,7 @@ const replaceFigure = (domNode: any) => {
                     <div className="flex justify-center items-center p-5 rounded-xl">
                         <Image
                             src={image.attribs.src}
-                            alt={image.attribs.alt}
+                            alt={image.attribs.alt||"image"}
                             width={image.attribs.width || 1920} // Adjust width as needed
                             height={image.attribs.height || 1080} // Use the calculated height
                             quality={70}
@@ -251,7 +251,7 @@ const page = async ({ params }: Props) => {
                                         <div className="w-9 rounded-full">
                                             <Image
                                                 src={project.author.node.avatar.url}
-                                                alt="avatar"
+                                                alt={project.author.node.name}
                                                 width={36}
                                                 height={36}
                                             />
@@ -272,7 +272,7 @@ const page = async ({ params }: Props) => {
                                 <Image
                                     width="800"
                                     height="462"
-                                    alt={`blog_image`}
+                                    alt={project.title}
                                     className={`rounded-xl mb-5`}
                                     src={project.featuredImage.node.sourceUrl}
                                 />

@@ -25,18 +25,18 @@ const Header = () => {
    const [sidebarOpen, setSidebarOpen] = React.useState<boolean>(false)
    const [logo, setLogo] = useState<any>();
    //const [categories, setCategories] = useState<Category[]>();
- /*  useEffect(() => {
-      const fetchData = async () => {
-         try {
-            const categoriesData = await getCategories();
-            setCategories(categoriesData);
-         } catch (error) {
-            console.error('Error fetching categories:', error);
-         }
-      };
-
-      fetchData();
-   }, []);*/
+   /*  useEffect(() => {
+        const fetchData = async () => {
+           try {
+              const categoriesData = await getCategories();
+              setCategories(categoriesData);
+           } catch (error) {
+              console.error('Error fetching categories:', error);
+           }
+        };
+  
+        fetchData();
+     }, []);*/
 
    useEffect(() => {
       // Ensure theme state is hydrated before applying logo selection logic
@@ -52,7 +52,7 @@ const Header = () => {
          <div className="container mx-auto font-work">
             <div className="navbar grid grid-cols-12">
                <div className="col-span-3">
-                  <Link href={`/`}>
+                  <Link href={`/`} aria-label='Logo'>
                      <Logo LogoHd={logo || LogoLight} />
                   </Link>
                </div>
@@ -180,7 +180,7 @@ const Header = () => {
          <nav className="hidden xl:block col-span-6 col-span-12 text-sm mt-5">
             <div className="w-full flex flex-wrap justify-center gap-4">
                {Categories.map((item: any, index: number) => (
-                     <div key={index} className="mb-3">
+                  <div key={index} className="mb-3">
                      <Link
                         href={item.link}
                         className="link link-hover text-base text-base-content/80 hover:text-primary transition hover:duration-300"
@@ -188,8 +188,8 @@ const Header = () => {
                         {item.title}
                      </Link>
                   </div>
-                  
-                  ))}
+
+               ))}
             </div>
          </nav>
 
@@ -200,16 +200,17 @@ const Header = () => {
 // Header logo svg component
 export const Logo = ({ LogoHd }: any) => (
    <div className="flex flex-col items-center sm:flex-row sm:items-center">
-      <Image src={LogoHd} alt={''} width="36" height="36" className="mb-2 sm:mb-0" />
-      <span className="text-base-content font-bold text-sm ml-0 sm:ml-3 hidden md:inline md:text-xs xs:text-xs xl:text-xl">FATİH EMRE BAYRAM</span>
+      <Image src={LogoHd} alt={'Logo'} width="36" height="36" className="mb-2 sm:mb-0" />
+      <span className="text-base-content text-xs font-bold text-sm ml-0 sm:ml-3 hidden md:inline xl:text-xl">FATİH EMRE BAYRAM</span>
    </div>
+
 
 )
 
 // Site Favicon svg component
 export const Favicon = ({ logoFav }: any) => (
    <div className="flex flex-col items-center sm:flex-row sm:items-center">
-      <Image src={logoFav} alt={''} width="36" height="36" className="mb-2 sm:mb-0" />
+      <Image src={logoFav} alt={'Logo'} width="36" height="36" className="mb-2 sm:mb-0" />
    </div>
 )
 export default Header

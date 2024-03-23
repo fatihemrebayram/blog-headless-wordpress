@@ -22,7 +22,7 @@ const ProjectOverlayCard = ({ project }: Props) => {
             <Image
                width="1216"
                height="450"
-               alt={`banner_image`}
+               alt={project.title}
                src={project.featuredImage.node.sourceUrl}
                className="rounded-xl"
             />
@@ -42,7 +42,7 @@ const ProjectOverlayCard = ({ project }: Props) => {
                <div className=" flex items-center gap-3">
                   <div className="avatar">
                      <div className="w-9 rounded-full">
-                        <Image src={project.author.node.avatar.url} width={100} height={100} alt="avatar" />
+                        <Image src={project.author.node.avatar.url} width={100} height={100} alt={project.author.node.name} />
                      </div>
                   </div>
                   <h5>

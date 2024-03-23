@@ -20,10 +20,10 @@ const PostCard = ({ post }: Props) => {
          <figure>
             <Image
                src={post.featuredImage.node.sourceUrl}
-               alt="email"
+               alt={post.title}
                className={`rounded-xl`}
-               width={1920}
-               height={1080}
+               width={640}
+               height={480}
             />
          </figure>
          <div className="card-body py-6 px-2">
@@ -48,7 +48,7 @@ const PostCard = ({ post }: Props) => {
                <div className=" flex items-center gap-3">
                   <div className="avatar">
                      <div className="w-9 rounded-full">
-                        <Image src={post.author.node.avatar.url} alt="avatar" width={256} height={256} />
+                        <Image src={post.author.node.avatar.url} alt={post.author.node.name}width={256} height={256} />
                      </div>
                   </div>
                   <h5>

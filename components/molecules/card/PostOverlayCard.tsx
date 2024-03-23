@@ -22,7 +22,7 @@ const PostOverlayCard = ({ post }: Props) => {
             <Image
                width="1216"
                height="450"
-               alt={`banner_image`}
+               alt={post.title}
                src={post.featuredImage.node.sourceUrl}
                className="rounded-xl"
             />
@@ -49,7 +49,7 @@ const PostOverlayCard = ({ post }: Props) => {
                <div className=" flex items-center gap-3">
                   <div className="avatar">
                      <div className="w-9 rounded-full">
-                        <Image src={post.author.node.avatar.url} width={100} height={100} alt="avatar" />
+                        <Image src={post.author.node.avatar.url} width={100} height={100} alt={post.author.node.name} />
                      </div>
                   </div>
                   <h5>

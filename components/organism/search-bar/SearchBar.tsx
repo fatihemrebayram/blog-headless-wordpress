@@ -41,8 +41,9 @@ function SearchBar() {
         }}
         className="outline-none text-base-content bg-base-200 w-28 placeholder:font-work"
         placeholder="Search"
+        aria-label="Search"
       />
-      <button type="submit">
+      <button type="submit" aria-label="Submit Search">
         <svg
           className="cursor-pointer"
           width="16"

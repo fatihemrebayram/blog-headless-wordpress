@@ -22,7 +22,7 @@ const ProjectCard = ({ project ,developing}: Props) => {
          <figure>
             <Image
                src={project.featuredImage.node.sourceUrl}
-               alt="email"
+               alt={project.title}
                className={`rounded-xl`}
                width={1920}
                height={1080}
@@ -50,7 +50,7 @@ const ProjectCard = ({ project ,developing}: Props) => {
                <div className=" flex items-center gap-3">
                   <div className="avatar">
                      <div className="w-9 rounded-full">
-                        <Image src={project.author.node.avatar.url} alt="avatar" width={256} height={256} />
+                        <Image src={project.author.node.avatar.url} alt={project.author.node.name} width={256} height={256} />
                      </div>
                   </div>
                   <h5>
