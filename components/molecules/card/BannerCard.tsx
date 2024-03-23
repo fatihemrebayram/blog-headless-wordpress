@@ -16,14 +16,14 @@ interface Props {
 }
 const BannerCard = ({ post }: Props) => {
    return (
-      <div className="relative rounded-xl font-work mb-24">
+      <div className="hidden relative rounded-xl font-work mb-24 xl:block">
          <Image
-            width="1216"
-            height="600"
+            width="1280"
+            height="720"
             alt={post.featuredImage?.node.altText||post.title}
             src={post.featuredImage?.node.sourceUrl}
             className="rounded-xl"
-            priority
+            loading='lazy'
          />
          <div className="absolute -bottom-16 left-4 md:left-14 rounded-xl p-4 md:p-10 bg-base-100 w-10/12 md:w-7/12 lg:w-6/12 shadow-[0_12px_24px_-6px] shadow-base-content/20">
 

@@ -10,6 +10,7 @@ import Image from 'next/image';
 import React, { Suspense } from "react";
 import NotFoundPage from "../not-found";
 import Loading from "../loading";
+import { YouTubeEmbed } from "@next/third-parties/google";
 
 export const dynamicParams = true;
 
@@ -136,7 +137,7 @@ const replaceFigure = (domNode: any) => {
                     <div className="flex justify-center items-center p-5 rounded-xl">
                         <Image
                             src={image.attribs.src}
-                            alt={image.attribs.alt||"image"}
+                            alt={image.attribs.alt || "image"}
                             width={image.attribs.width || 1920} // Adjust width as needed
                             height={image.attribs.height || 1080} // Use the calculated height
                             quality={70}
@@ -147,7 +148,7 @@ const replaceFigure = (domNode: any) => {
 
             if (figcaption) {
                 const figcaptionElement = (
-                    <figcaption className="text-center">{domToReact([figcaption])}</figcaption>
+                    <figcaption className="text-center text-base-content/50 text-sm">{domToReact([figcaption])}</figcaption>
                 );
 
                 return (
@@ -189,8 +190,8 @@ const replaceVideo = (domNode: any) => {
         const iframe = domNode.children.find((child: { name: string; }) => child.name === 'div').children.find((child: { name: string; }) => child.name === 'p').children.find((child: { name: string; }) => child.name === 'iframe');
         const src = iframe.attribs.src;
         const title = iframe.attribs.title;
-        const width = iframe.attribs.width;
-        const height = iframe.attribs.height;
+        //  const width = iframe.attribs.width;
+        //const height = iframe.attribs.height;
 
         // Replace the figure element with your custom YouTube component
         return (
@@ -198,10 +199,9 @@ const replaceVideo = (domNode: any) => {
                 <div className="flex justify-center items-center p-5 rounded-xl">
                     <iframe
                         title={title}
-                        width={640}
-                        height={360}
+                        width={460}
+                        height={260}
                         src={src}
-                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
                     ></iframe>
@@ -231,7 +231,7 @@ const page = async ({ params }: Props) => {
             <NotFoundPage />
         )
     return (
-        <Suspense fallback={<Loading/>}>
+        <Suspense fallback={<Loading />}>
 
             <main>
                 <section>

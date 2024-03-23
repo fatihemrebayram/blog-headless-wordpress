@@ -16,7 +16,7 @@ interface Props {
 }
 const PostCard = ({ post }: Props) => {
    return (
-      <div className="card w-fit p-4 border border-base-content/10 rounded-xl font-work">
+      <div className="card w-fit p-4 border border-base-content/10 rounded-xl font-work bg-base-content/5 ">
          <figure>
             <Image
                src={post.featuredImage.node.sourceUrl}

@@ -73,21 +73,20 @@ const Header = () => {
                <div className="flex items-center justify-end xl:justify-center gap-10 col-span-9 xl:col-span-3">
                   {/* Search Block */}
                   <SearchBar />
-                  {/* Theme Switcher */}
-                  {/*<input*/}
-                  {/*   type="checkbox"*/}
-                  {/*   className={`toggle rounded-full ${*/}
-                  {/*      !lightMode ? 'toggle-primary' : ''*/}
-                  {/*   }`}*/}
-                  {/*   onClick={() => {*/}
-                  {/*      if (theme === 'light') {*/}
-                  {/*         setTheme('dark')*/}
-                  {/*      } else {*/}
-                  {/*         setTheme('light')*/}
-                  {/*      }*/}
-                  {/*   }}*/}
-                  {/*   defaultChecked={theme === 'dark'}*/}
-                  {/*/>*/}
+                  <input
+                     type="checkbox"
+                     className={`toggle rounded-full hidden xl:block $
+                       !lightMode ? 'toggle-primary' : ''
+                  }`}
+                     onClick={() => {
+                        if (theme === 'light') {
+                           setTheme('dark')
+                        } else {
+                           setTheme('light')
+                        }
+                     }}
+                     defaultChecked={theme === 'dark'}
+                  />
 
                   {/*Multi themes switcher */}
                   <div className="flex-none z-50">
@@ -201,7 +200,7 @@ const Header = () => {
 export const Logo = ({ LogoHd }: any) => (
    <div className="flex flex-col items-center sm:flex-row sm:items-center">
       <Image src={LogoHd} alt={'Logo'} width="36" height="36" className="mb-2 sm:mb-0" />
-      <span className="text-base-content text-xs font-bold text-sm ml-0 sm:ml-3 hidden md:inline xl:text-xl">FATİH EMRE BAYRAM</span>
+      <h5 className="text-base-content text-xs font-bold text-sm ml-0 sm:ml-3 hidden md:inline xl:text-xl">FATİH EMRE BAYRAM</h5>
    </div>
 
 

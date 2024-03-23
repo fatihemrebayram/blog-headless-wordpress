@@ -16,7 +16,7 @@ interface Props {
 
 const PostOverlayCard = ({ post }: Props) => {
    return (
-      <div className="card relative font-work">
+      <div className="hidden xl:block card relative font-work">
          {/* Card Image */}
          <figure>
             <Image

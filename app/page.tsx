@@ -1,11 +1,8 @@
-import Advertisement from '@/components/organism/advertisement/Advertisement'
 import PostCard from '@/components/molecules/card/PostCard'
 import React from 'react'
 import {  Post } from '@/models/post'
-import { GET_POSTS, getCategories, getHomePage, getPosts, getPostsByCategory } from '@/utils/actions'
+import { getPosts } from '@/utils/actions'
 import BannerCard from '@/components/molecules/card/BannerCard'
-import { getClient } from '@/utils/client'
-import { ResolvingMetadata, Metadata } from 'next'
 import Link from 'next/link'
 /*
 export async function generateMetadata(parent: ResolvingMetadata): Promise<Metadata> {
@@ -75,8 +72,8 @@ const BlogListing = async () => {
          </section>*/}
 
          {/* Latest Post */}
-         <section className="my-20">
-            <h3 className="text-base-content font-bold text-2xl mb-8 font-work leading-8">
+         <section className="xl:my-20 ">
+            <h3 className="text-base-content font-bold text-2xl mb-8 font-work leading-8 text-center">
                En son yazılar
             </h3>
             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

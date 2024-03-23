@@ -10,8 +10,8 @@ export function Providers({ children }: Props) {
    return (
       <ThemeProvider
          themes={[
-            'light',
-            'dark',
+            'light',  
+            'dark', 
             'bumblebee',
             'emerald',
             'corporate',
@@ -39,7 +39,8 @@ export function Providers({ children }: Props) {
             'coffee',
             'winter',
          ]}
-         enableSystem={false}
+         defaultTheme='dark'
+         enableSystem={true}
       >
          {children}
       </ThemeProvider>
