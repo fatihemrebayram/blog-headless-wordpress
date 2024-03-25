@@ -232,7 +232,6 @@ const page = async ({ params }: Props) => {
         )
     return (
         <Suspense fallback={<Loading />}>
-
             <main>
                 <section>
                     <div className="container mx-auto px-5 md:px-0 w-full md:w-10/12 lg:w-5/12 font-work">

@@ -1,6 +1,7 @@
+import { BannerSkeleton } from '@/components/skeletons/banner-skeleton';
 import { Project } from '@/models/project';
 import Image from 'next/image';
-import React from 'react'
+import React, { Suspense } from 'react'
 
 /**
  * Our PostOverlayCard is a reusable UI component used to display a project as a card format.
@@ -16,6 +17,8 @@ interface Props {
 
 const ProjectOverlayCard = ({ project }: Props) => {
    return (
+      <Suspense fallback={<BannerSkeleton/>}>
+
       <div className="hidden xl:block card relative font-work">
          {/* Card Image */}
          <figure>
@@ -61,6 +64,7 @@ const ProjectOverlayCard = ({ project }: Props) => {
          {/*  overlay */}
          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div>
       </div>
+      </Suspense>
    )
 }
 

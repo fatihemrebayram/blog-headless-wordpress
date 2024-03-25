@@ -70,7 +70,7 @@ const Header = () => {
                      ))}
                   </div>
                </nav>
-               <div className="flex items-center justify-end xl:justify-center gap-10 col-span-9 xl:col-span-3">
+               <div className="flex items-center justify-end xl:justify-center gap-10 col-span-9 xl:col-span-3" id='themeToggle'>
                   {/* Search Block */}
                   <SearchBar />
                   <input
@@ -86,6 +86,7 @@ const Header = () => {
                         }
                      }}
                      defaultChecked={theme === 'dark'}
+                     aria-labelledby="themeToggle"
                   />
 
                   {/*Multi themes switcher */}

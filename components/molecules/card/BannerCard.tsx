@@ -1,7 +1,8 @@
+import { BannerSkeleton } from '@/components/skeletons/banner-skeleton';
 import { Post } from '@/models/post';
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { Suspense } from 'react'
 
 /**
  * Our BannerCard is a reusable UI component used to display a top section of our website
@@ -16,6 +17,7 @@ interface Props {
 }
 const BannerCard = ({ post }: Props) => {
    return (
+      <Suspense fallback={<BannerSkeleton/>}>
       <div className="hidden relative rounded-xl font-work mb-24 xl:block">
          <Image
             width="1280"
@@ -65,6 +67,7 @@ const BannerCard = ({ post }: Props) => {
             </div>
          </div>
       </div>
+      </Suspense>
    )
 }
 

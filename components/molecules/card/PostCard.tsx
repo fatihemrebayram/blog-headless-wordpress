@@ -1,7 +1,9 @@
+import Loading from '@/app/loading';
+import { CardSkeleton } from '@/components/skeletons/card-skeleton';
 import { Post } from '@/models/post';
 import Image from 'next/image';
 import Link from 'next/link'
-import React from 'react'
+import React, { Suspense } from 'react'
 
 /**
  * Our PostCard is a reusable UI component used to display a post as a card format.
@@ -16,6 +18,7 @@ interface Props {
 }
 const PostCard = ({ post }: Props) => {
    return (
+      <Suspense fallback={<CardSkeleton/>}>
       <div className="card w-fit p-4 border border-base-content/10 rounded-xl font-work bg-base-content/5 ">
          <figure>
             <Image
@@ -64,6 +67,7 @@ const PostCard = ({ post }: Props) => {
             </div>
          </div>
       </div>
+      </Suspense>
    )
 }
 

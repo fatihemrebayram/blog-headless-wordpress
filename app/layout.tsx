@@ -1,6 +1,6 @@
 'use client'
 import './globals.css'
-import React from 'react'
+import React, { Suspense } from 'react'
 import {
    Plus_Jakarta_Sans,
    Source_Serif_4,
@@ -11,6 +11,7 @@ import Header from '@/components/organism/header'
 import Footer from '@/components/organism/footer'
 import { Providers } from '@/utils/themeMode' // Plus Jakarta Sans font family with 4 weights and 2 styles
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Loading from './loading'
 
 // Plus Jakarta Sans font family with 4 weights and 2 styles
 const Jakarta_Sans = Plus_Jakarta_Sans({
@@ -57,7 +58,9 @@ export default function RootLayout({
             <Providers>
                <GlobalProvider>
                   <Header />
+                  <Suspense fallback={<Loading/>}>
                      {children}
+                     </Suspense>
                   <Footer />
                </GlobalProvider>
             </Providers>
